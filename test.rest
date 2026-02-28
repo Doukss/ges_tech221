@@ -1,0 +1,22 @@
+### creer un departement
+POST http://localhost:3000/api/departements
+Content-Type: application/json
+
+{
+  "code": "DSIw",
+  "libelle": "Direction des Systèmes d'Information"
+}
+
+### update un departement
+PUT http://localhost:3000/api/departements/1
+Content-Type: application/json
+
+{
+  "code": "DSI",
+  "libelle": "Direction des Systèmes d'Information"
+}
+
+
+### archiver un departement
+PATCH http://localhost:3000/api/departements/3/archive
+
