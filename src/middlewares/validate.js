@@ -6,7 +6,10 @@ export const validate = (schema) => {
     } catch (error) {
       return res.status(400).json({
         message: "Validation error",
-        errors: error.errors,
+        details: error.errors?.map((err) => ({
+          field: err.path[0],
+          message: err.message,
+        })),
       });
     }
   };

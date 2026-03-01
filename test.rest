@@ -3,8 +3,17 @@ POST http://localhost:3000/api/departements
 Content-Type: application/json
 
 {
-  "code": "DSIw",
-  "libelle": "Direction des Systèmes d'Information"
+  "code": "ZZZ",
+  "libelle": "Direction des Systèmes de communication "
+}
+
+### modifier un departement
+PUT http://localhost:3000/api/departements/2  
+Content-Type: application/json
+
+{
+  "code": "RH",
+  "libelle": "Ressources Humaines"
 }
 
 ### update un departement
@@ -19,4 +28,70 @@ Content-Type: application/json
 
 ### archiver un departement
 PATCH http://localhost:3000/api/departements/3/archive
+
+
+### supprimer un departement
+DELETE http://localhost:3000/api/departements/3
+
+
+
+
+
+# ===========================Employé===========================
+
+
+
+### créer un employé
+POST http://localhost:3000/api/employes
+Content-Type: application/json
+
+{
+  "prenom": "Malick",
+  "nom": "fall",
+  "email": "fall@test.com",
+  "telephone": "771234533",
+  "departementId": "4"
+}
+
+
+
+
+### modifier un employé
+PUT http://localhost:3000/api/employes/2
+Content-Type: application/json
+
+{
+  "nom": "Coumba Fall",
+  "telephone": "772233499"
+}
+
+
+
+
+
+# ==========================Projet===========================
+
+### créer un projet
+POST http://localhost:3000/api/projets
+Content-Type: application/json
+
+{
+  "nom": "Projet ERP",
+  "description": "Implémentation ERP",
+  "dateDebut": "2026-03-01",
+  "dateFin": "2026-12-01",
+  "statut": "EN_COURS"
+}
+
+
+### affecter un employé à un projet
+POST http://localhost:3000/api/affectations
+Content-Type: application/json
+
+{
+  "employeId": 1,
+  "projetId": 1,
+  "role": "Développeur Backend",
+  "dateAffectation": "2026-03-05"
+}
 
